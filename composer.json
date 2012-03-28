@@ -1,0 +1,28 @@
+{
+    "name": "r1pp3rj4ck/TwigstringBundle",
+    "type": "symfony-bundle",
+    "description": "Renders strings instead of files with Twig",
+    "keywords": ["Twig string"],
+    "homepage": "https://github.com/r1pp3rj4ck/TwigstringBundle",
+    "authors": [
+        {
+            "name": "Lars Krueger",
+            "homepage": "http://www.LaKrue.com"
+        },
+        {
+            "name": "Luis Cordova",
+            "email": "cordoval@gmail.com",
+            "homepage": "http://www.craftitonline.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.*",
+        "symfony/security-bundle": "2.*",
+        "twig/twig": "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "LK\\TwigstringBundle": "" }
+    },
+    "target-dir": "LK/TwigstringBundle"
+}
