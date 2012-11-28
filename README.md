@@ -14,40 +14,53 @@ Extension ideas:
 * option to include templates
 * add a black-/whitelist for allowed allowed twig tags
 
-Install on your project:
-------------------------
+## Installation
 
-    git submodule add git://github.com/LaKrue/TwigstringBundle.git src/LK/TwigstringBundle
+If you are an advanced Symfony developer, you know how things are done. The package's name is `r1pp3rj4ck/TwigstringBundle` and you need the `dev-master` version of it, and the bundle's FQN is `LK\TwigstringBundle\LKTwigstringBundle()`. You also need a top-level entry to your config: `lk_twigstring: ~`.
 
-Set configuration on config.yml (as top level entry):
------------------------------------------------------
+Of course, if you're not sure about yourself, here is the step-by-step installation procedure:
 
-    lk_twigstring: ~
+### 1. Register the bundle in composer
 
-Update autoload.php
--------------------
-
-``` php
-$loader->registerNamespaces(array(
-     //...//
-     'LK'          => __DIR__.'/../src',
-     //...//
-));
-````
-
-Update AppKernel.php
---------------------
-
-``` php
-$bundles = array(
-    //...//
-    new LK\TwigstringBundle\LKTwigstringBundle(),
-    //...//
-);
+You need to add it to your composer.json requirements:
+``` js
+{
+    "require": {
+         "r1pp3rj4ck/TwigstringBundle": "dev-master"
+    }
+}
 ```
 
-Use LK/TwigstringBundle:
-------------------------
+### 2. Downloading the bundle from packagist
+
+Install it by running the following command:
+
+    $ ./composer.phar update r1pp3rj4ck/TwigstringBundle
+    
+### 3. Registering the bundle in the kernel
+
+``` php
+<?php
+// app/AppKernel.php
+
+public function registerBundles() {
+    $bundles = array(
+        // ...
+        new LK\TwigstringBundle\LKTwigstringBundle(),
+        // ...
+    );
+}
+```
+
+### 4. Registering the bundle in the configuration
+
+``` yaml
+# app/config/config.yml
+lk_twigstring: ~
+```
+
+
+## Usage
 
 ``` php
 // set example parameter
@@ -70,12 +83,13 @@ $vars = array('var'=>'x');
 $vars['test'] = 'u ' . $this->get('twigstring')->render('v {{ var }} {% if var is defined %} y {% endif %} z{% for i in 1..5 %} {{ i }}{% endfor %}', $vars);
 ```
 
-Example output:
----------------
+### Example output:
 
     u v x y z
 
+## License
 
-Authors:
---------
-LarsK, cordoval
+The bundle is licensed under MIT license. For full license see [LICENSE](https://github.com/r1pp3rj4ck/TwigstringBundle/blob/master/LICENSE) file
+
+### Authors
+LarsK (Lars Krüger), cordoval (Luis Cordova), r1pp3rj4ck (Attila Bukor)
