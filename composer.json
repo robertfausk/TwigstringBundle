@@ -1,9 +1,10 @@
 {
-    "name": "r1pp3rj4ck/TwigstringBundle",
+    "name": "r1pp3rj4ck/twigstring-bundle",
     "type": "symfony-bundle",
     "description": "Renders strings instead of files with Twig",
     "keywords": ["Twig string"],
     "homepage": "https://github.com/r1pp3rj4ck/TwigstringBundle",
+    "license": "MIT",
     "authors": [
         {
             "name": "Lars Krueger",
@@ -15,8 +16,8 @@
             "homepage": "http://www.craftitonline.com"
         },
         {
-            "name": "Attila Bukor",
-            "email": "r1pp3rj4ck@hotmail.com",
+            "name": "r1pp3rj4ck / Attila Bukor",
+            "email": "attila.bukor@gmail.com",
             "homepage": "http://r1pp3rj4ck.wordpress.com"
         }
     ],
