@@ -65,10 +65,10 @@ lk_twigstring: ~
 ``` yaml
 # app/config/services.yml
 services:
-    twig2.extension.foo:
+    twigstring.extension.foo:
         class: Foo\BarBundle\Twig\FooBarExtension
         tags:
-            - { name: twig2.extension }
+            - { name: twigstring.extension }
 ```
 
 For a list of available extensions see [fabpot/Twig-extensions](https://github.com/fabpot/Twig-extensions) or create one on your own with [Symfony Cookbook](http://symfony.com/doc/current/cookbook/templating/twig_extension.html) and [twig doc](http://twig.sensiolabs.org/doc/advanced.html#creating-an-extension).

@@ -9,7 +9,7 @@
 
 namespace LK\TwigstringBundle;
 
-use LK\TwigstringBundle\DependencyInjection\Compiler\Twig2EnvironmentPass;
+use LK\TwigstringBundle\DependencyInjection\Compiler\TwigstringEnvironmentPass;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
@@ -19,6 +19,6 @@ class LKTwigstringBundle extends Bundle
     {
         parent::build($container);
 
-        $container->addCompilerPass(new Twig2EnvironmentPass());
+        $container->addCompilerPass(new TwigstringEnvironmentPass());
     }
 }

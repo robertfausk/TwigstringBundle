@@ -13,16 +13,16 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
  *
  * @see TwigEnvironmentPass
  */
-class Twig2EnvironmentPass implements CompilerPassInterface
+class TwigstringEnvironmentPass implements CompilerPassInterface
 {
     public function process(ContainerBuilder $container)
     {
-        if (false === $container->hasDefinition('twig2')) {
+        if (false === $container->hasDefinition('twigstring')) {
             // LKTwigstringBundle not installed
             return;
         }
 
-        $definition = $container->getDefinition('twig2');
+        $definition = $container->getDefinition('twigstring');
 
         // Extensions must always be registered before everything else.
         // For instance, global variable definitions must be registered
@@ -30,7 +30,7 @@ class Twig2EnvironmentPass implements CompilerPassInterface
         // be registered.
         $calls = $definition->getMethodCalls();
         $definition->setMethodCalls(array());
-        foreach (array_keys($container->findTaggedServiceIds('twig2.extension')) as $id) {
+        foreach (array_keys($container->findTaggedServiceIds('twigstring.extension')) as $id) {
             $definition->addMethodCall('addExtension', array(new Reference($id)));
         }
 
