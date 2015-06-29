@@ -9,10 +9,42 @@
 
 namespace LK\TwigstringBundle\Loader;
 
-class String extends \Twig_Loader_String
+class String implements \Twig_LoaderInterface
 {
-	public function load($name) {
-		return new $name;
-	}
+    public function load($name)
+    {
+        return new $name;
+    }
 
+    /**
+     * {@inheritdoc}
+     */
+    public function getSource($name)
+    {
+        return $name;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function exists($name)
+    {
+        return true;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function getCacheKey($name)
+    {
+        return $name;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function isFresh($name, $time)
+    {
+        return true;
+    }
 }
