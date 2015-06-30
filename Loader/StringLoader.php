@@ -9,7 +9,7 @@
 
 namespace LK\TwigstringBundle\Loader;
 
-class String implements \Twig_LoaderInterface
+class StringLoader implements \Twig_LoaderInterface
 {
     public function load($name)
     {

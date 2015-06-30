@@ -6,18 +6,18 @@
 
     <parameters>
         <parameter key="twigstring.class">Twig_Environment</parameter>
-        <parameter key="twigstring.loader.class">LK\TwigstringBundle\Loader\String</parameter>
+        <parameter key="twigstring.loader.class">LK\TwigstringBundle\Loader\StringLoader</parameter>
         <parameter key="templating.engine.twigstring.class">Symfony\Bundle\TwigBundle\TwigEngine</parameter>
     </parameters>
 
     <services>
-        <service id="twigstring" class="%twigstring.class%">
+        <service id="twigstring" class="%twigstring.class%" public="false">
             <argument type="service" id="twigstring.loader" />
         </service>
 
         <service id="twigstring.loader" class="%twigstring.loader.class%" public="false" />
 
-        <service id="templating.engine.twigstring" class="%templating.engine.twigstring.class%" public="false">
+        <service id="templating.engine.twigstring" class="%templating.engine.twigstring.class%" public="true">
             <argument type="service" id="twigstring" />
             <argument type="service" id="templating.name_parser" />
             <argument type="service" id="templating.locator" />

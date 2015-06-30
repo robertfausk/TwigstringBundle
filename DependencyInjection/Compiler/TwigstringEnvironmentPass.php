@@ -1,7 +1,6 @@
 <?php
 namespace LK\TwigstringBundle\DependencyInjection\Compiler;
 
-use Symfony\Bundle\TwigBundle\DependencyInjection\Compiler\TwigEnvironmentPass;
 use Symfony\Component\DependencyInjection\Reference;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
@@ -11,7 +10,7 @@ use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
  *
  * This is needed to be able to use twig extensions from YAML configuration
  *
- * @see TwigEnvironmentPass
+ * @see Symfony\Bundle\TwigBundle\DependencyInjection\Compiler\TwigEnvironmentPass
  */
 class TwigstringEnvironmentPass implements CompilerPassInterface
 {
