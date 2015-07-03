@@ -1,5 +1,5 @@
 <?php
-namespace Tests\DependencyInjection;
+namespace LK\TwigstringBundle\Tests\DependencyInjection;
 
 use LK\TwigstringBundle\DependencyInjection\LKTwigstringExtension;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
